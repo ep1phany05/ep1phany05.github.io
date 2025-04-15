@@ -6,6 +6,7 @@
     src: local("Lato Italic"), local("Lato-Italic"), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: italic;
@@ -13,6 +14,7 @@
     src: local("Lato Italic"), local("Lato-Italic"), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: italic;
@@ -20,6 +22,7 @@
     src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: italic;
@@ -27,6 +30,7 @@
     src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: normal;
@@ -34,6 +38,7 @@
     src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: normal;
@@ -41,6 +46,7 @@
     src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: normal;
@@ -48,6 +54,7 @@
     src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: normal;
@@ -56,21 +63,45 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --card-border: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2980b9;
+        --background-color: #1a1a1a;
+        --text-color: #f4f4f4;
+        --card-bg: #2d2d2d;
+        --card-border: #404040;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
 body {
     font-family: "Lato", sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     max-width: 1280px;
     margin: 0 auto;
     padding: 40px;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: var(--card-bg);
+    box-shadow: 0 4px 8px var(--shadow-color);
     border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .profile-img {
@@ -78,36 +109,54 @@ body {
     max-width: 180px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
 }
 
 .name {
     font-size: 2em;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--primary-color);
+}
+
+.contact-links {
+    margin-top: 20px;
 }
 
 .contact-links a {
     margin: 0 10px;
-    color: #2c3e50;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .contact-links a:hover {
-    text-decoration: underline;
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
-.research-section, .publications-section {
-    margin-top: 20px;
+.research-section,
+.publications-section {
+    margin-top: 40px;
 }
 
 .publication {
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.publication:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .publication img {
@@ -119,27 +168,93 @@ body {
 .papertitle {
     font-size: 1.2em;
     font-weight: bold;
-    color: #34495e;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.papertitle:hover {
+    color: var(--primary-color);
+}
+
+.paper-links {
+    margin-top: 10px;
+}
+
+.paper-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.paper-links a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
 p {
     text-align: justify;
-}
-
-.profile-img {
-    width: 80%; /* Adjust as needed for your layout */
-    height: auto; /* Ensures the image scales proportionally */
-    border-radius: 5px; /* For slightly rounded corners, can be omitted for sharp corners */
-    object-fit: cover; /* Ensures the image covers the allocated space */
+    line-height: 1.6;
 }
 
 .icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .icon-container img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.icon-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .name {
+        font-size: 1.5em;
+    }
+
+    .profile-img {
+        max-width: 150px;
+        margin: 20px auto;
+    }
+
+    .contact-links {
+        text-align: center;
+    }
+
+    .contact-links a {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .publication {
+        padding: 15px;
+    }
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.5s ease-out;
 }

@@ -1,145 +1,201 @@
-/* Add the Lato font definitions here */
+/* Define CSS variables for consistent theming */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --background-color: #f4f4f9;
+    --container-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --text-color: #333;
+}
+
+/* Optimize font loading with font-display */
 @font-face {
     font-family: "Lato";
     font-style: italic;
     font-weight: 400;
     src: local("Lato Italic"), local("Lato-Italic"), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-display: swap;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: italic;
     font-weight: 400;
     src: local("Lato Italic"), local("Lato-Italic"), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: italic;
     font-weight: 700;
     src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-display: swap;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: italic;
     font-weight: 700;
     src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: normal;
     font-weight: 400;
     src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-display: swap;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: normal;
     font-weight: 400;
     src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: normal;
     font-weight: 700;
     src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-display: swap;
 }
+
 @font-face {
     font-family: "Lato";
     font-style: normal;
     font-weight: 700;
     src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
 }
 
+/* Base styles */
 body {
     font-family: "Lato", sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 20px;
+    line-height: 1.6;
+    font-size: 1.1rem;
 }
 
 .container {
     max-width: 1280px;
     margin: 0 auto;
     padding: 40px;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: var(--container-bg);
+    box-shadow: 0 4px 8px var(--shadow-color);
     border-radius: 8px;
 }
 
-.profile-img {
-    width: 100%;
-    max-width: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
+/* Typography */
 .name {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
+.papertitle {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Links */
 .contact-links a {
     margin: 0 10px;
-    color: #2c3e50;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .contact-links a:hover {
-    text-decoration: underline;
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.research-section, .publications-section {
+/* Images */
+.profile-img {
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sections */
+.research-section,
+.publications-section {
     margin-top: 20px;
 }
 
 .publication {
     background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.publication img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.publication:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-.papertitle {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #34495e;
-}
-
+/* Paragraphs */
 p {
     text-align: justify;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
-.profile-img {
-    width: 80%; /* Adjust as needed for your layout */
-    height: auto; /* Ensures the image scales proportionally */
-    border-radius: 5px; /* For slightly rounded corners, can be omitted for sharp corners */
-    object-fit: cover; /* Ensures the image covers the allocated space */
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
 
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .container {
+        padding: 20px;
+    }
 
-.icon-container img {
-  max-width: 100%;
-  height: auto;
+    .profile-img {
+        width: 50%;
+    }
 }

@@ -1,80 +1,128 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Delong Wu</title>
 	<meta name="author" content="Delong Wu">
-	<meta name="description" content="Delong Wu's personal website. Master's student in Vision Lab at Nanjing University. Interested in Artificial Intelligence, 3D Reconstruction and Computer Vision.">
+	<meta name="description"
+	      content="Delong Wu's personal website. Master's student in Vision Lab at Nanjing University.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+	      rel="stylesheet">
+
+	<!-- Bootstrap 5 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- 自定义样式 -->
 	<link href="styles.css" rel="stylesheet">
 </head>
-
 <body>
-<div class="container">
-	<!-- First Part: Brief Introduction -->
-	<div class="row">
-		<div class="col-md-8">
-			<p class="name">Delong Wu (武德龙)</p>
-			<p>
-				I am currently a master's student in the <a href="https://vision.nju.edu.cn/main.htm">Vision Lab</a> at Nanjing University,
-				under the supervision of <a href="https://pakfa.github.io/zhuhao_photo.github.io/">Hao Zhu</a>.
+
+<!-- Header -->
+<header class="bg-white shadow-sm py-3 mb-4">
+	<div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+		<div class="text-center text-md-start">
+			<h1 class="display-5 mb-1">
+				Delong Wu <small class="text-muted">(武德龙)</small>
+			</h1>
+			<p class="lead mb-0">
+				Master's Student @
+				<a href="https://vision.nju.edu.cn/main.htm" target="_blank" rel="noopener">
+					Vision Lab, Nanjing University
+				</a>
 			</p>
-			<p>
-				Prior to this, I received my bachelor's degree from Hohai University in 2019.
-				I am currently pursuing my master's degree at Nanjing University.
-			</p>
-			<p class="contact-links">
-				<a href="mailto:delong.wu@smail.nju.edu.cn" class="btn btn-outline-primary btn-sm">Email</a>
-				<a href="https://orcid.org/0009-0002-8416-4995" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Orcid</a>
-				<a href="https://github.com/ep1phany05" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Github</a>
-			</p>
+			<p class="mb-0">BSc Hohai University, 2019</p>
 		</div>
-		<div class="col-md-4 text-center">
-			<a href="images/profile.jpg"><img src="images/profile.jpg" alt="profile photo" class="profile-img"></a>
+		<div class="avatar-wrapper mt-3 mt-md-0">
+			<img src="images/profile.jpg" alt="Delong Wu" class="profile-img">
 		</div>
 	</div>
+</header>
 
-	<!-- Second Part: Research introduction -->
-	<section class="research-section">
-		<h2>Research</h2>
+<!-- Main Content -->
+<main class="container">
+
+	<!-- About Me -->
+	<section id="about" class="section">
+		<h2 class="h4 mb-2">About Me</h2>
 		<p>
-			I'm interested in <strong>Artificial Intelligence</strong>, <strong>3D Reconstruction</strong> and <strong>Computer Vision</strong>.
+			I’m currently supervised by
+			<a href="https://pakfa.github.io/zhuhao_photo.github.io/" target="_blank" rel="noopener">
+				Hao Zhu
+			</a>.
+			Previously, I received my bachelor’s degree from Hohai University in 2019.
+		</p>
+		<div class="contact-links mt-2">
+			<a href="mailto:delong.wu@smail.nju.edu.cn" class="btn btn-outline-primary btn-sm">Email</a>
+			<a href="https://orcid.org/0009-0002-8416-4995" class="btn btn-outline-primary btn-sm" target="_blank"
+			   rel="noopener">ORCID</a>
+			<a href="https://github.com/ep1phany05" class="btn btn-outline-primary btn-sm" target="_blank"
+			   rel="noopener">GitHub</a>
+		</div>
+	</section>
+
+	<!-- Research Interests -->
+	<section id="research" class="section">
+		<h2 class="h4 mb-2">Research Interests</h2>
+		<p class="mb-0">
+			<span class="badge bg-primary me-2">Artificial Intelligence</span>
+			<span class="badge bg-primary me-2">3D Reconstruction</span>
+			<span class="badge bg-primary">Computer Vision</span>
 		</p>
 	</section>
 
-	<!-- Third Part: Publications -->
-	<section class="publications-section">
-		<div class="publication row">
-			<div class="col-md-3 icon-container">
-				<img src="images/ECCV2024.png" alt="ECCV 2024">
-			</div>
-			<div class="col-md-9">
-				<a href="https://github.com/ep1phany05/NeuralPoissonSolver">
-					<span class="papertitle">Neural Poisson Solver: A Universal and Continuous Framework for Natural Signal Blending</span>
-				</a>
-				<br>
-				<strong>Delong Wu</strong><sup>*</sup>,
-				<a href="https://pakfa.github.io/zhuhao_photo.github.io/">Hao Zhu</a><sup>*</sup>,
-				<a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-				<a href="">You Li</a>,
-				<a href="https://vision.nju.edu.cn/main.htm">Zhan Ma</a>,
-				<a href="https://cite.nju.edu.cn/People/Faculty/20190621/i5054.html">Xun Cao</a>
-				<br>
-				<em>ECCV</em>, 2024
-				<br>
-				<a href="https://ep1phany05.github.io/NeuralPoissonSolver-website/" target="_blank" rel="noopener noreferrer">Project Page</a>
-				/
-				<a href="https://arxiv.org/abs/2407.08457" target="_blank" rel="noopener noreferrer">arXiv</a>
-				/
-				<a href="https://github.com/ep1phany05/NeuralPoissonSolver" target="_blank" rel="noopener noreferrer">Code</a>
+	<!-- Publications -->
+	<section id="publications" class="section">
+		<h2 class="h4 mb-3">Selected Publication</h2>
+		<div class="card publication-card">
+			<div class="row g-0 align-items-center">
+				<div class="col-auto p-2 text-center">
+					<img src="images/ECCV2024.png" alt="ECCV 2024" class="publication-img">
+				</div>
+				<div class="col">
+					<div class="card-body">
+						<h5 class="card-title mb-1">
+							<a href="https://github.com/ep1phany05/NeuralPoissonSolver" target="_blank"
+							   rel="noopener">
+								Neural Poisson Solver: A Universal and Continuous Framework for Natural Signal Blending
+							</a>
+						</h5>
+						<p class="mb-1">
+							<strong>Delong Wu*</strong>,
+							<a href="https://pakfa.github.io/zhuhao_photo.github.io/" target="_blank"
+							   rel="noopener">Hao
+								Zhu*</a>, Qi Zhang, You Li, Zhan Ma, Xun Cao
+						</p>
+						<p class="text-muted mb-2"><em>ECCV 2024</em></p>
+						<p class="mb-0">
+							<a href="https://ep1phany05.github.io/NeuralPoissonSolver-website/" class="card-link"
+							   target="_blank" rel="noopener">Project Page</a>
+							·
+							<a href="https://arxiv.org/abs/2407.08457" class="card-link" target="_blank"
+							   rel="noopener">arXiv</a>
+							·
+							<a href="https://github.com/ep1phany05/NeuralPoissonSolver" class="card-link"
+							   target="_blank" rel="noopener">Code</a>
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
-</div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</main>
+
+<!-- Footer -->
+<footer class="bg-light text-center py-3 mt-4">
+	<div class="container">
+		<small class="text-muted">&copy; 2025 Delong Wu. All rights reserved.</small>
+	</div>
+</footer>
+
+<!-- Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

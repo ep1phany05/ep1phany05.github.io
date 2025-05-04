@@ -1,145 +1,84 @@
-/* Add the Lato font definitions here */
-@font-face {
-    font-family: "Lato";
-    font-style: italic;
-    font-weight: 400;
-    src: local("Lato Italic"), local("Lato-Italic"), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format("woff2");
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-    font-family: "Lato";
-    font-style: italic;
-    font-weight: 400;
-    src: local("Lato Italic"), local("Lato-Italic"), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-    font-family: "Lato";
-    font-style: italic;
-    font-weight: 700;
-    src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format("woff2");
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-    font-family: "Lato";
-    font-style: italic;
-    font-weight: 700;
-    src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 400;
-    src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format("woff2");
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 400;
-    src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 700;
-    src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format("woff2");
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 700;
-    src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
+/* 全局基础 */
 body {
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
+    /* 字号略小，更紧凑 */
+    font-size: 1rem;
+    /* 行高略小，保持可读 */
+    line-height: 1.5;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 40px;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
+/* 通用 section 间距 & 分割线，改为更紧凑 */
+.section {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e5e5e5;
 }
 
+.section:last-of-type {
+    border-bottom: none;
+}
+
+/* 标题底部间距略小 */
+.section h2 {
+    margin-bottom: 0.75rem;
+}
+
+/* 头像容器，防止压缩并水平居中 */
+.avatar-wrapper {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+/* 个人头像：圆角矩形 */
 .profile-img {
-    width: 100%;
-    max-width: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.name {
-    font-size: 2em;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.contact-links a {
-    margin: 0 10px;
-    color: #2c3e50;
-    text-decoration: none;
-}
-
-.contact-links a:hover {
-    text-decoration: underline;
-}
-
-.research-section, .publications-section {
-    margin-top: 20px;
-}
-
-.publication {
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.publication img {
-    max-width: 100%;
+    width: 150px;
     height: auto;
-    display: block;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.papertitle {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #34495e;
+/* ECCV 预览图：圆角矩形 */
+.publication-img {
+    width: 250px;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-p {
-    text-align: justify;
+/* Publications 卡片圆角 & 内边距，收紧为 1rem */
+.publication-card {
+    border-radius: 0.75rem;
 }
 
-.profile-img {
-    width: 80%; /* Adjust as needed for your layout */
-    height: auto; /* Ensures the image scales proportionally */
-    border-radius: 5px; /* For slightly rounded corners, can be omitted for sharp corners */
-    object-fit: cover; /* Ensures the image covers the allocated space */
+.publication-card .card-body {
+    padding: 1rem;
 }
 
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* 联系按钮间距稍微收紧 */
+.contact-links .btn {
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
-.icon-container img {
-  max-width: 100%;
-  height: auto;
+/* Footer 内边距收紧 */
+footer.py-3 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    margin-top: 1rem !important;
+}
+
+/* 响应式：小屏幕下缩小图片 */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 140px;
+    }
+
+    .publication-img {
+        width: 100px;
+    }
 }

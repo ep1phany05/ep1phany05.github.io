@@ -41,13 +41,16 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ECCV 预览图：圆角矩形 */
+/* 预览图：圆角矩形 */
 .publication-img {
     width: 250px;
     height: auto;
     border-radius: 0.5rem;
     object-fit: cover;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Publications 卡片圆角 & 内边距，收紧为 1rem */

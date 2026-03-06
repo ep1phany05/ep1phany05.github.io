@@ -13,7 +13,7 @@
 	--border:      #d2d2d7;
 
 	--font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", Arial, sans-serif;
-	--max-w: 760px;
+	--max-w: 800px;
 	--ease: 0.22s ease;
 }
 
@@ -32,7 +32,7 @@ html {
 
 body {
 	font-family: var(--font);
-	font-size: 16px;
+	font-size: 17px;
 	line-height: 1.7;
 	background: var(--bg);
 	color: var(--text);
@@ -174,16 +174,6 @@ a:hover {
 	text-transform: uppercase;
 	color: var(--text-2);
 	margin-bottom: 1rem;
-/* 预览图：圆角矩形 */
-.publication-img {
-    width: 250px;
-    height: auto;
-    border-radius: 0.5rem;
-    object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .section-body {
@@ -234,11 +224,13 @@ a:hover {
 }
 
 .pub-thumb {
-	width: 150px;
+	width: 160px;
+	height: 110px;
 	flex-shrink: 0;
 	border-radius: 8px;
-	object-fit: cover;
-	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+	object-fit: contain;
+	background: var(--surface);
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .pub-info {
@@ -353,7 +345,8 @@ a:hover {
 
 	.pub-thumb {
 		width: 100%;
-		max-width: 280px;
+		height: 160px;
+		max-width: 100%;
 	}
 
 	.section {

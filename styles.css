@@ -310,10 +310,6 @@ a:hover {
 	background: var(--surface);
 }
 
-.pub-item + .pub-item {
-	border-top: 1px solid var(--border);
-}
-
 .pub-thumb {
 	width: 180px;
 	height: auto;

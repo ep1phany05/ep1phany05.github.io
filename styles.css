@@ -183,6 +183,82 @@ a:hover {
 }
 
 /* ============================================================
+   About — structured entries
+   ============================================================ */
+.about-group + .about-group {
+	border-top: 1px solid var(--border);
+	margin-top: 1.5rem;
+	padding-top: 1.5rem;
+}
+
+.about-group-label {
+	font-size: 0.625rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--text-3);
+	margin-bottom: 1rem;
+}
+
+.about-item {
+	margin-bottom: 1.1rem;
+}
+
+.about-item:last-child {
+	margin-bottom: 0;
+}
+
+.about-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin-bottom: 0.2rem;
+}
+
+.about-org {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.about-school {
+	font-size: 0.9375rem;
+	font-weight: 600;
+	color: var(--text);
+}
+
+.about-badge {
+	display: inline-block;
+	padding: 0.1rem 0.45rem;
+	background: var(--surface);
+	color: var(--text-2);
+	border-radius: 980px;
+	font-size: 0.6875rem;
+	font-weight: 500;
+}
+
+.about-date {
+	font-size: 0.8125rem;
+	color: var(--text-3);
+	white-space: nowrap;
+}
+
+.about-degree {
+	font-size: 0.875rem;
+	color: var(--text-2);
+	line-height: 1.55;
+	margin-bottom: 0.15rem;
+}
+
+.about-detail {
+	font-size: 0.8125rem;
+	color: var(--text-3);
+	line-height: 1.5;
+}
+
+/* ============================================================
    Research Interests
    ============================================================ */
 .interests {
@@ -282,11 +358,18 @@ a:hover {
 }
 
 .pub-venue {
-	font-size: 0.8125rem;
-	font-weight: 600;
-	font-style: italic;
-	color: var(--accent);
 	margin-bottom: 0.75rem;
+}
+
+.venue-badge {
+	display: inline-block;
+	padding: 0.2rem 0.65rem;
+	background: rgba(0, 113, 227, 0.08);
+	color: var(--accent);
+	border-radius: 980px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
 }
 
 .pub-links {

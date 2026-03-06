@@ -183,27 +183,33 @@ a:hover {
 }
 
 /* ============================================================
-   Tags
+   Research Interests
    ============================================================ */
-.tags {
+.interests {
+	list-style: none;
 	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
+	flex-direction: column;
+	gap: 0.55rem;
 }
 
-.tag {
-	display: inline-block;
-	padding: 0.3rem 0.875rem;
-	background: var(--surface);
+.interests li {
+	font-size: 0.9375rem;
+	line-height: 1.6;
+}
+
+.interest-term {
+	font-weight: 600;
 	color: var(--text);
-	border-radius: 980px;
-	font-size: 0.875rem;
-	font-weight: 500;
-	transition: background var(--ease);
 }
 
-.tag:hover {
-	background: var(--surface-hover);
+.interest-term::after {
+	content: " — ";
+	font-weight: 400;
+	color: var(--text-2);
+}
+
+.interest-def {
+	color: var(--text-2);
 }
 
 /* ============================================================
@@ -226,11 +232,14 @@ a:hover {
 .pub-thumb {
 	width: 160px;
 	height: 110px;
+	min-width: 160px;
 	flex-shrink: 0;
+	display: block;
 	border-radius: 8px;
 	object-fit: contain;
 	background: var(--surface);
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	overflow: hidden;
 }
 
 .pub-info {

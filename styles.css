@@ -26,6 +26,11 @@
 	padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -305,17 +310,18 @@ a:hover {
 	background: var(--surface);
 }
 
+.pub-item + .pub-item {
+	border-top: 1px solid var(--border);
+}
+
 .pub-thumb {
-	width: 160px;
-	height: 110px;
-	min-width: 160px;
+	width: 180px;
+	height: auto;
+	min-width: 180px;
 	flex-shrink: 0;
 	display: block;
 	border-radius: 8px;
-	object-fit: contain;
-	background: var(--surface);
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-	overflow: hidden;
 }
 
 .pub-info {
@@ -399,6 +405,7 @@ a:hover {
 	text-align: center;
 	font-size: 0.75rem;
 	color: var(--text-3);
+	border-top: 1px solid var(--border);
 }
 
 /* ============================================================

@@ -1,4 +1,15 @@
 /* ============================================================
+   Custom Font
+   ============================================================ */
+@font-face {
+	font-family: "CS";
+	src: url("fonts/CS-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ============================================================
    Design Tokens
    ============================================================ */
 :root {
@@ -12,7 +23,7 @@
 	--accent:      #0071e3;
 	--border:      #d2d2d7;
 
-	--font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", Arial, sans-serif;
+	--font: "CS", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", Arial, sans-serif;
 	--max-w: 800px;
 	--ease: 0.22s ease;
 }
@@ -53,6 +64,56 @@ a {
 
 a:hover {
 	opacity: 0.7;
+}
+
+/* ============================================================
+   Top Navigation
+   ============================================================ */
+.topnav {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background: rgba(29, 29, 31, 0.85);
+	backdrop-filter: saturate(180%) blur(20px);
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.topnav-inner {
+	max-width: var(--max-w);
+	margin: 0 auto;
+	padding: 0 2rem;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.topnav-name {
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: #f5f5f7;
+	letter-spacing: 0.01em;
+	white-space: nowrap;
+}
+
+.topnav-links {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.topnav-links a {
+	font-size: 0.8125rem;
+	color: #a1a1a6;
+	opacity: 1;
+	transition: color var(--ease);
+}
+
+.topnav-links a:hover {
+	color: #f5f5f7;
+	opacity: 1;
 }
 
 /* ============================================================

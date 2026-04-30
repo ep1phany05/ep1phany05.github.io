@@ -1,15 +1,4 @@
 /* ============================================================
-   Custom Font
-   ============================================================ */
-@font-face {
-	font-family: "CS";
-	src: url("fonts/CS-Regular.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-/* ============================================================
    Design Tokens
    ============================================================ */
 :root {
@@ -23,7 +12,7 @@
 	--accent:      #0071e3;
 	--border:      #d2d2d7;
 
-	--font: "CS", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", Arial, sans-serif;
+	--font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", Arial, sans-serif;
 	--max-w: 800px;
 	--ease: 0.22s ease;
 }

@@ -121,7 +121,7 @@ a:hover {
    ============================================================ */
 .hero {
 	background: var(--hero-bg);
-	padding: 4.5rem 0 4rem;
+	padding: 6rem 0 5.5rem;
 }
 
 .hero-inner {
@@ -135,12 +135,12 @@ a:hover {
 }
 
 .hero-name {
-	font-size: clamp(2rem, 5vw, 2.75rem);
+	font-size: clamp(2.5rem, 6vw, 3.5rem);
 	font-weight: 700;
 	color: #f5f5f7;
-	letter-spacing: -0.025em;
-	line-height: 1.1;
-	margin-bottom: 0.6rem;
+	letter-spacing: -0.03em;
+	line-height: 1.05;
+	margin-bottom: 1rem;
 }
 
 .hero-name-zh {
@@ -156,7 +156,7 @@ a:hover {
 .hero-title {
 	font-size: 0.9375rem;
 	color: #a1a1a6;
-	margin-bottom: 0.2rem;
+	margin-bottom: 0.35rem;
 }
 
 .hero-link {
@@ -172,7 +172,7 @@ a:hover {
 .hero-edu {
 	font-size: 0.875rem;
 	color: #6e6e73;
-	margin-bottom: 1.75rem;
+	margin-bottom: 2.25rem;
 }
 
 .hero-links {
@@ -205,7 +205,7 @@ a:hover {
 }
 
 .profile-img {
-	width: 128px;
+	width: 148px;
 	height: auto;
 	border-radius: 14px;
 	display: block;
@@ -390,6 +390,10 @@ a:hover {
 	font-weight: 600;
 	line-height: 1.5;
 	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0.45rem;
 }
 
 .pub-title a {
@@ -419,19 +423,17 @@ a:hover {
 	opacity: 1;
 }
 
-.pub-venue {
-	margin-bottom: 0.75rem;
-}
-
 .venue-badge {
 	display: inline-block;
-	padding: 0.2rem 0.65rem;
+	padding: 0.1rem 0.5rem;
 	background: rgba(0, 113, 227, 0.08);
 	color: var(--accent);
 	border-radius: 980px;
-	font-size: 0.75rem;
+	font-size: 0.6875rem;
 	font-weight: 600;
 	letter-spacing: 0.02em;
+	flex-shrink: 0;
+	vertical-align: baseline;
 }
 
 .pub-links {
@@ -469,7 +471,7 @@ a:hover {
    ============================================================ */
 @media (max-width: 600px) {
 	.hero {
-		padding: 3rem 0 2.5rem;
+		padding: 4rem 0 3.5rem;
 	}
 
 	.hero-inner {
@@ -488,7 +490,7 @@ a:hover {
 	}
 
 	.profile-img {
-		width: 100px;
+		width: 120px;
 	}
 
 	.pub-item {

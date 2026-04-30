@@ -379,10 +379,6 @@ a:hover {
 	font-weight: 600;
 	line-height: 1.5;
 	margin-bottom: 0.5rem;
-	display: flex;
-	align-items: baseline;
-	flex-wrap: wrap;
-	gap: 0.45rem;
 }
 
 .pub-title a {
@@ -421,8 +417,8 @@ a:hover {
 	font-size: 0.6875rem;
 	font-weight: 600;
 	letter-spacing: 0.02em;
-	flex-shrink: 0;
-	vertical-align: baseline;
+	vertical-align: middle;
+	margin-left: 0.3rem;
 }
 
 .pub-links {

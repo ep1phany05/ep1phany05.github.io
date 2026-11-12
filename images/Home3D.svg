@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="accentIndigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="accentEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="accentAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.07"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="320" rx="14" fill="url(#bgGrad)" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Subtle 3D perspective grid lines -->
+  <g stroke="#e2e8f0" stroke-width="1" opacity="0.65">
+    <line x1="0" y1="64" x2="800" y2="64"/>
+    <line x1="0" y1="128" x2="800" y2="128"/>
+    <line x1="0" y1="192" x2="800" y2="192"/>
+    <line x1="0" y1="256" x2="800" y2="256"/>
+    <line x1="160" y1="0" x2="160" y2="320"/>
+    <line x1="320" y1="0" x2="320" y2="320"/>
+    <line x1="480" y1="0" x2="480" y2="320"/>
+    <line x1="640" y1="0" x2="640" y2="320"/>
+  </g>
+
+  <!-- Title Banner -->
+  <rect x="24" y="18" width="752" height="36" rx="8" fill="#0f172a"/>
+  <text x="40" y="41" font-family="'Google Sans', -apple-system, sans-serif" font-size="14.5" font-weight="700" fill="#f8fafc" letter-spacing="0.02em">Home3D 1.0</text>
+  <text x="135" y="41" font-family="'Google Sans Text', -apple-system, sans-serif" font-size="12.5" font-weight="400" fill="#94a3b8">Modular Image-to-3D Asset Generation Pipeline for Interior Design</text>
+  <rect x="676" y="25" width="88" height="22" rx="11" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="720" y="40" text-anchor="middle" font-family="'Source Code Pro', monospace" font-size="10.5" font-weight="600" fill="#38bdf8">PBR + Parts</text>
+
+  <!-- Step 1: Reference Image -->
+  <g filter="url(#cardShadow)">
+    <rect x="24" y="72" width="145" height="222" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="96.5" y="96" text-anchor="middle" font-family="'Google Sans', sans-serif" font-size="12.5" font-weight="700" fill="#1e293b">1. Input Image</text>
+    <!-- Stylized Armchair 2D Photo Frame -->
+    <rect x="40" y="108" width="113" height="118" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 2"/>
+    <!-- Chair illustration -->
+    <path d="M62 175 L130 175 L124 195 L68 195 Z" fill="#f59e0b" opacity="0.85"/>
+    <path d="M66 132 C66 126, 126 126, 126 132 L122 175 L70 175 Z" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M56 150 L68 150 L68 188 L56 188 Z" rx="3" fill="#d97706"/>
+    <path d="M124 150 L136 150 L136 188 L124 188 Z" rx="3" fill="#d97706"/>
+    <line x1="68" y1="195" x2="63" y2="215" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
+    <line x1="124" y1="195" x2="129" y2="215" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
+    <text x="96.5" y="248" text-anchor="middle" font-family="'Google Sans Text', sans-serif" font-size="11" fill="#475569">Single Reference</text>
+    <text x="96.5" y="264" text-anchor="middle" font-family="'Google Sans Text', sans-serif" font-size="11" fill="#475569">Furniture Photo</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <g stroke="#64748b" stroke-width="2" fill="none">
+    <line x1="173" y1="183" x2="197" y2="183"/>
+    <polyline points="191,177 199,183 191,189" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Step 2: 4-Stage Modular Pipeline -->
+  <g filter="url(#cardShadow)">
+    <rect x="203" y="72" width="374" height="222" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="390" y="96" text-anchor="middle" font-family="'Google Sans', sans-serif" font-size="12.5" font-weight="700" fill="#1e293b">2. Four-Module Coupled Generation</text>
+
+    <!-- Module A: Geometry -->
+    <rect x="219" y="110" width="164" height="76" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+    <rect x="229" y="120" width="8" height="24" rx="4" fill="url(#accentBlue)"/>
+    <text x="244" y="131" font-family="'Google Sans', sans-serif" font-size="12" font-weight="700" fill="#1e3a8a">Geometry (SDF DiT)</text>
+    <text x="244" y="146" font-family="'Source Code Pro', monospace" font-size="10" fill="#3b82f6">Watertight Mesh</text>
+    <text x="229" y="170" font-family="'Google Sans Text', sans-serif" font-size="10.5" fill="#475569">Coarse-to-fine Flow DiT</text>
+
+    <!-- Module B: Texture -->
+    <rect x="397" y="110" width="164" height="76" rx="8" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.2"/>
+    <rect x="407" y="120" width="8" height="24" rx="4" fill="url(#accentIndigo)"/>
+    <text x="422" y="131" font-family="'Google Sans', sans-serif" font-size="12" font-weight="700" fill="#312e81">3D Texture Field</text>
+    <text x="422" y="146" font-family="'Source Code Pro', monospace" font-size="10" fill="#6366f1">Multi-View Albedo</text>
+    <text x="407" y="170" font-family="'Google Sans Text', sans-serif" font-size="10.5" fill="#475569">Consistent UV Baking</text>
+
+    <!-- Module C: Material -->
+    <rect x="219" y="198" width="164" height="80" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.2"/>
+    <rect x="229" y="208" width="8" height="24" rx="4" fill="url(#accentEmerald)"/>
+    <text x="244" y="219" font-family="'Google Sans', sans-serif" font-size="12" font-weight="700" fill="#064e3b">MatWeaver PBR</text>
+    <text x="244" y="234" font-family="'Source Code Pro', monospace" font-size="10" fill="#059669">Roughness / Metallic</text>
+    <text x="229" y="258" font-family="'Google Sans Text', sans-serif" font-size="10.5" fill="#475569">UV-Voting Material Retrieval</text>
+
+    <!-- Module D: Parts -->
+    <rect x="397" y="198" width="164" height="80" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.2"/>
+    <rect x="407" y="208" width="8" height="24" rx="4" fill="url(#accentAmber)"/>
+    <text x="422" y="219" font-family="'Google Sans', sans-serif" font-size="12" font-weight="700" fill="#78350f">PartVAE &amp; PartDiT</text>
+    <text x="422" y="234" font-family="'Source Code Pro', monospace" font-size="10" fill="#d97706">Semantic Part SDFs</text>
+    <text x="407" y="258" font-family="'Google Sans Text', sans-serif" font-size="10.5" fill="#475569">Decomposed Editable Parts</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <g stroke="#64748b" stroke-width="2" fill="none">
+    <line x1="581" y1="183" x2="605" y2="183"/>
+    <polyline points="599,177 607,183 599,189" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Step 3: Output 3D Asset -->
+  <g filter="url(#cardShadow)">
+    <rect x="611" y="72" width="165" height="222" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="693.5" y="96" text-anchor="middle" font-family="'Google Sans', sans-serif" font-size="12.5" font-weight="700" fill="#1e293b">3. Editable 3D Asset</text>
+
+    <!-- 3D Wireframe + Shaded Bounding Cube -->
+    <g transform="translate(637, 110)">
+      <polygon points="56,6 106,28 106,86 56,110 6,86 6,28" fill="#f8fafc" stroke="#3b82f6" stroke-width="1.5"/>
+      <line x1="6" y1="28" x2="56" y2="52" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <line x1="106" y1="28" x2="56" y2="52" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <line x1="56" y1="52" x2="56" y2="110" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <!-- Decomposed 3D Chair parts inside cube -->
+      <polygon points="34,34 78,34 74,62 38,62" fill="#60a5fa" opacity="0.85" stroke="#1d4ed8" stroke-width="1.2"/>
+      <polygon points="28,65 84,65 78,80 34,80" fill="#34d399" opacity="0.9" stroke="#047857" stroke-width="1.2"/>
+      <line x1="36" y1="82" x2="32" y2="98" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+      <line x1="76" y1="82" x2="80" y2="98" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <rect x="627" y="232" width="133" height="22" rx="6" fill="#eff6ff"/>
+    <text x="693.5" y="247" text-anchor="middle" font-family="'Source Code Pro', monospace" font-size="10.5" font-weight="600" fill="#1d4ed8">Production-Ready</text>
+    <text x="693.5" y="272" text-anchor="middle" font-family="'Google Sans Text', sans-serif" font-size="11" fill="#475569">Interior &amp; E-Commerce</text>
+  </g>
+</svg>

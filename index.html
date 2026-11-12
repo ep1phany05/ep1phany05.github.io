@@ -1,50 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 	<meta charset="UTF-8">
-	<title>Homepage · Delong Wu</title>
+	<title>Homepage · Delong Wu (武德龙)</title>
 	<link rel="icon" type="image/svg+xml" href="favicon.svg">
 	<meta name="author" content="Delong Wu">
 	<meta name="description"
-	      content="Delong Wu's personal website. Master's student in Vision Lab at Nanjing University.">
+	      content="Delong Wu's academic homepage. Master's student in Vision Lab at Nanjing University researching 3D reconstruction, 3D generation, computer vision, and implicit neural representations.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Open Graph -->
 	<meta property="og:type"        content="profile">
 	<meta property="og:url"         content="https://ep1phany05.github.io/">
-	<meta property="og:title"       content="Delong Wu">
-	<meta property="og:description" content="Master's student in Vision Lab at Nanjing University. Research in 3D reconstruction, computer vision, and implicit neural representations.">
+	<meta property="og:title"       content="Delong Wu · Academic Homepage">
+	<meta property="og:description" content="Master's student in Vision Lab at Nanjing University. Research in 3D reconstruction, 3D asset generation, computer vision, and implicit neural representations.">
 	<meta property="og:image"       content="https://ep1phany05.github.io/images/profile.jpg">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card"        content="summary">
-	<meta name="twitter:title"       content="Delong Wu">
-	<meta name="twitter:description" content="Master's student in Vision Lab at Nanjing University. Research in 3D reconstruction, computer vision, and implicit neural representations.">
+	<meta name="twitter:title"       content="Delong Wu · Academic Homepage">
+	<meta name="twitter:description" content="Master's student in Vision Lab at Nanjing University. Research in 3D reconstruction, 3D asset generation, computer vision, and implicit neural representations.">
 	<meta name="twitter:image"       content="https://ep1phany05.github.io/images/profile.jpg">
+
+	<!-- Google Fonts: Google Sans, Google Sans Text, Source Code Pro -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Google+Sans+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 	<link href="styles.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Reading Progress Bar -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
 <!-- Top Navigation -->
 <nav class="topnav" aria-label="Site navigation">
 	<div class="topnav-inner">
-		<span class="topnav-name">HOMEPAGE</span>
-		<div class="topnav-links">
-			<a href="#about">About</a>
-			<a href="#research">Research</a>
-			<a href="#publications">Publications</a>
+		<a href="#" class="topnav-brand">
+			<span class="topnav-dot" aria-hidden="true"></span>
+			<span class="topnav-name">DELONG WU</span>
+		</a>
+		<div class="topnav-right">
+			<div class="topnav-links">
+				<a href="#about" data-nav="about">About</a>
+				<a href="#research" data-nav="research">Research</a>
+				<a href="#publications" data-nav="publications">Publications</a>
+			</div>
+			<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle Light / Dark Theme">
+				<svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<circle cx="12" cy="12" r="5"></circle>
+					<line x1="12" y1="1" x2="12" y2="3"></line>
+					<line x1="12" y1="21" x2="12" y2="23"></line>
+					<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+					<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+					<line x1="1" y1="12" x2="3" y2="12"></line>
+					<line x1="21" y1="12" x2="23" y2="12"></line>
+					<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+					<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+				</svg>
+				<svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+				</svg>
+			</button>
 		</div>
 	</div>
 </nav>
 
 <!-- Hero -->
-<header class="hero">
+<header class="hero" id="hero">
+	<div class="hero-grid-bg" aria-hidden="true"></div>
 	<div class="hero-inner">
 		<div class="hero-text">
+			<div class="hero-eyebrow">
+				<span class="status-indicator" aria-hidden="true"></span>
+				<span class="hero-status-code">3D Vision · Generative 3D · Neural Representations</span>
+			</div>
 			<h1 class="hero-name">
 				Delong Wu
-				<span class="hero-name-zh">武德龙</span>
+				<span class="hero-name-zh" lang="zh-CN">武德龙</span>
 			</h1>
 			<p class="hero-title">
 				Master's Student ·
@@ -53,18 +87,36 @@
 				</a>
 				· Advised by
 				<a href="https://pakfa.github.io/zhuhao_photo.github.io/" target="_blank" rel="noopener" class="hero-link">
-					Hao Zhu
+					Prof. Hao Zhu
 				</a>
 			</p>
-			<p class="hero-edu">B.Sc. Hohai University, 2023</p>
-			<nav class="hero-links">
-				<a href="mailto:delong.wu@smail.nju.edu.cn" class="hero-btn">Email</a>
-				<a href="https://orcid.org/0009-0002-8416-4995" target="_blank" rel="noopener" class="hero-btn">ORCID</a>
-				<a href="https://github.com/ep1phany05" target="_blank" rel="noopener" class="hero-btn">GitHub</a>
+			<p class="hero-edu">
+				B.Sc. in Communication Engineering, Hohai University, 2023
+			</p>
+			<nav class="hero-links" aria-label="Contact and social links">
+				<div class="hero-btn-group">
+					<a href="mailto:delong.wu@smail.nju.edu.cn" class="hero-btn hero-btn-primary">
+						<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+						<span>Email</span>
+					</a>
+					<button type="button" class="hero-btn hero-btn-copy" id="copyEmailBtn" data-email="delong.wu@smail.nju.edu.cn" title="Copy email address: delong.wu@smail.nju.edu.cn">
+						<span id="copyEmailText">Copy</span>
+					</button>
+				</div>
+				<a href="https://orcid.org/0009-0002-8416-4995" target="_blank" rel="noopener" class="hero-btn">
+					<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.5 9.5v6"/><circle cx="9.5" cy="7" r="0.5" fill="currentColor"/><path d="M12.5 9.5h2a2.5 2.5 0 0 1 0 5h-2v-5z"/></svg>
+					<span>ORCID</span>
+				</a>
+				<a href="https://github.com/ep1phany05" target="_blank" rel="noopener" class="hero-btn">
+					<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+					<span>GitHub</span>
+				</a>
 			</nav>
 		</div>
 		<div class="hero-avatar">
-			<img src="images/profile.jpg" alt="Delong Wu" class="profile-img">
+			<div class="avatar-frame">
+				<img src="images/profile.jpg" alt="Delong Wu" class="profile-img">
+			</div>
 		</div>
 	</div>
 </header>
@@ -74,34 +126,48 @@
 
 	<!-- About -->
 	<section class="section" id="about">
-		<h2 class="section-label">About</h2>
+		<div class="section-header">
+			<h2 class="section-label">About &amp; Background</h2>
+		</div>
 
 		<!-- Education -->
 		<div class="about-group">
 			<h3 class="about-group-label">Education</h3>
 
-			<div class="about-item">
-				<div class="about-header">
-					<div class="about-org">
-						<span class="about-school">Nanjing University</span>
-						<span class="about-badge">985</span>
+			<div class="timeline">
+				<div class="about-item timeline-item">
+					<div class="timeline-marker" aria-hidden="true"></div>
+					<div class="about-header">
+						<div class="about-org">
+							<span class="about-school">Nanjing University</span>
+							<span class="about-badge">985</span>
+							<span class="about-badge about-badge-accent">Double First-Class</span>
+						</div>
+						<span class="about-date">Sep 2023 – Jun 2026</span>
 					</div>
-					<span class="about-date">Sep 2023 – Jun 2026</span>
+					<p class="about-degree">M.Eng. in Electronic Information (Communication Engineering) · School of Electronic Science and Engineering</p>
+					<div class="about-metrics">
+						<span class="metric-pill"><code>GPA 90.89/100</code> (Rank <code>2/48</code>)</span>
+						<span class="metric-pill metric-pill-gold">National Scholarship 2025</span>
+						<span class="metric-pill">First-Class Academic Scholarship (×2)</span>
+					</div>
 				</div>
-				<p class="about-degree">M.Eng. in Electronic Information (Communication Engineering) · School of Electronic Science and Engineering</p>
-				<p class="about-detail">GPA 90.89/100 (Rank 2/48) · First-class Academic Scholarship (2 consecutive years) · National Scholarship 2025</p>
-			</div>
 
-			<div class="about-item">
-				<div class="about-header">
-					<div class="about-org">
-						<span class="about-school">Hohai University</span>
-						<span class="about-badge">211</span>
+				<div class="about-item timeline-item">
+					<div class="timeline-marker" aria-hidden="true"></div>
+					<div class="about-header">
+						<div class="about-org">
+							<span class="about-school">Hohai University</span>
+							<span class="about-badge">211</span>
+						</div>
+						<span class="about-date">Sep 2019 – Jun 2023</span>
 					</div>
-					<span class="about-date">Sep 2019 – Jun 2023</span>
+					<p class="about-degree">B.Sc. in Communication Engineering · School of Information Science and Engineering</p>
+					<div class="about-metrics">
+						<span class="metric-pill"><code>GPA 4.8/5.0</code> (Rank <code>5/128</code>)</span>
+						<span class="metric-pill">Academic Excellence Scholarship (×4 consecutive years)</span>
+					</div>
 				</div>
-				<p class="about-degree">B.Sc. in Communication Engineering · School of Information Science and Engineering</p>
-				<p class="about-detail">GPA 4.8/5.0 (Rank 5/128) · Academic Excellence Scholarship (4 consecutive years)</p>
 			</div>
 		</div>
 
@@ -109,98 +175,442 @@
 		<div class="about-group">
 			<h3 class="about-group-label">Industry Experience</h3>
 
-			<div class="about-item">
-				<div class="about-header">
-					<span class="about-school">Alibaba Taobao Tmall Group</span>
-					<span class="about-date">May – Aug 2025</span>
+			<div class="timeline">
+				<div class="about-item timeline-item">
+					<div class="timeline-marker timeline-marker-work" aria-hidden="true"></div>
+					<div class="about-header">
+						<div class="about-org">
+							<span class="about-school">Alibaba Taobao Tmall Group</span>
+							<span class="about-badge">Research Intern</span>
+						</div>
+						<span class="about-date">May – Aug 2025</span>
+					</div>
+					<p class="about-degree">Business Technology Department · 3D Reconstruction &amp; Generative Algorithms</p>
+					<div class="about-metrics">
+						<a href="https://homeai.taobao.com/" target="_blank" rel="noopener" class="metric-pill metric-pill-link">
+							<span>Core Contributor → <code>Home3D 1.0</code></span>
+						</a>
+					</div>
 				</div>
-				<p class="about-degree">Research Intern · Business Technology Department · 3D Reconstruction &amp; Generative Algorithms</p>
 			</div>
 		</div>
 	</section>
 
 	<!-- Research Interests -->
 	<section class="section" id="research">
-		<h2 class="section-label">Research Interests</h2>
-		<ul class="interests">
-			<li>
-				<span class="interest-term">Artificial Intelligence</span>
-				<span class="interest-def">Machine learning, deep neural networks, and optimization methods for building intelligent systems.</span>
+		<div class="section-header">
+			<h2 class="section-label">Research Interests</h2>
+		</div>
+		<ul class="interests-grid">
+			<li class="interest-card">
+				<div class="interest-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+						<polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+						<line x1="12" y1="22.08" x2="12" y2="12"/>
+					</svg>
+				</div>
+				<div class="interest-content">
+					<span class="interest-term">3D Reconstruction &amp; Generation</span>
+					<span class="interest-def">Recovering and synthesizing high-fidelity 3D geometry, PBR materials, and structured parts from images, video, or point clouds.</span>
+				</div>
 			</li>
-			<li>
-				<span class="interest-term">3D Reconstruction</span>
-				<span class="interest-def">Recovering 3D geometry and appearance from images, video, or point clouds to create digital representations of real-world scenes and objects.</span>
+			<li class="interest-card">
+				<div class="interest-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M2 12c2-4 4-6 6-6s4 12 6 12 4-12 6-12 2 2 2 6"/>
+						<circle cx="8" cy="6" r="1.5"/>
+						<circle cx="14" cy="18" r="1.5"/>
+						<circle cx="20" cy="6" r="1.5"/>
+					</svg>
+				</div>
+				<div class="interest-content">
+					<span class="interest-term">Implicit Neural Representations</span>
+					<span class="interest-def">Encoding scene properties such as SDF geometry, radiance, wavelet primitives, and motion as continuous neural fields.</span>
+				</div>
 			</li>
-			<li>
-				<span class="interest-term">Computer Vision</span>
-				<span class="interest-def">Enabling computers to interpret and understand visual information, including recognition, detection, and scene understanding.</span>
+			<li class="interest-card">
+				<div class="interest-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="3"/>
+						<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/>
+					</svg>
+				</div>
+				<div class="interest-content">
+					<span class="interest-term">Computer Vision</span>
+					<span class="interest-def">Enabling machines to interpret visual signals, spanning multi-view geometry, neural rendering, and physical signal blending.</span>
+				</div>
 			</li>
-			<li>
-				<span class="interest-term">Implicit Neural Representations</span>
-				<span class="interest-def">Encoding scene properties such as geometry, appearance, and motion as continuous functions parameterized by neural networks.</span>
+			<li class="interest-card">
+				<div class="interest-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="6" cy="6" r="2.5"/>
+						<circle cx="18" cy="6" r="2.5"/>
+						<circle cx="6" cy="18" r="2.5"/>
+						<circle cx="18" cy="18" r="2.5"/>
+						<line x1="8.5" y1="6" x2="15.5" y2="6"/>
+						<line x1="6" y1="8.5" x2="6" y2="15.5"/>
+						<line x1="18" y1="8.5" x2="18" y2="15.5"/>
+						<line x1="8.2" y1="7.8" x2="15.8" y2="16.2"/>
+					</svg>
+				</div>
+				<div class="interest-content">
+					<span class="interest-term">Artificial Intelligence</span>
+					<span class="interest-def">Diffusion transformers, flow matching, and deep optimization methods for scalable visual and spatial intelligence.</span>
+				</div>
 			</li>
 		</ul>
 	</section>
 
 	<!-- Publications -->
 	<section class="section" id="publications">
-		<h2 class="section-label">Selected Publications</h2>
-
-		<!-- ICCV 2025 -->
-		<article class="pub-item">
-			<img src="images/ICCV2025.png" alt="ICCV 2025 paper thumbnail" class="pub-thumb">
-			<div class="pub-info">
-				<h3 class="pub-title">
-					<a href="https://mitnku.github.io/WIPES/" target="_blank" rel="noopener">
-						WIPES: Wavelet-based Visual Primitives
-					</a>
-					<span class="venue-badge">ICCV 2025</span>
-				</h3>
-				<p class="pub-authors">
-					Wenhao Zhang*,
-					<a href="https://pakfa.github.io/zhuhao_photo.github.io/" target="_blank" rel="noopener">Hao Zhu*</a>,
-					<strong>Delong Wu*</strong>,
-					Di Kang, Linchao Bao, Xun Cao, Zhan Ma
-				</p>
-				<div class="pub-links">
-					<a href="https://mitnku.github.io/WIPES/" target="_blank" rel="noopener">Project Page</a>
-					<a href="https://arxiv.org/abs/2508.12615" target="_blank" rel="noopener">arXiv</a>
-					<a href="https://mitnku.github.io/WIPES/" target="_blank" rel="noopener">Code</a>
-				</div>
+		<div class="section-header section-header-row">
+			<div>
+				<h2 class="section-label">Selected Publications</h2>
+				<p class="pub-note"><code>*</code> indicates equal contribution / alphabetical order</p>
 			</div>
-		</article>
-
-		<!-- ECCV 2024 -->
-		<article class="pub-item">
-			<img src="images/ECCV2024.png" alt="ECCV 2024 paper thumbnail" class="pub-thumb">
-			<div class="pub-info">
-				<h3 class="pub-title">
-					<a href="https://github.com/ep1phany05/NeuralPoissonSolver" target="_blank" rel="noopener">
-						Neural Poisson Solver: A Universal and Continuous Framework for Natural Signal Blending
-					</a>
-					<span class="venue-badge">ECCV 2024</span>
-				</h3>
-				<p class="pub-authors">
-					<strong>Delong Wu*</strong>,
-					<a href="https://pakfa.github.io/zhuhao_photo.github.io/" target="_blank" rel="noopener">Hao Zhu*</a>,
-					Qi Zhang, You Li, Zhan Ma, Xun Cao
-				</p>
-				<div class="pub-links">
-					<a href="https://ep1phany05.github.io/NeuralPoissonSolver-website/" target="_blank" rel="noopener">Project Page</a>
-					<a href="https://arxiv.org/abs/2407.08457" target="_blank" rel="noopener">arXiv</a>
-					<a href="https://github.com/ep1phany05/NeuralPoissonSolver" target="_blank" rel="noopener">Code</a>
-				</div>
+			<div class="pub-filters" role="tablist" aria-label="Filter publications by topic">
+				<button type="button" class="filter-btn active" data-filter="all">All <span>3</span></button>
+				<button type="button" class="filter-btn" data-filter="3d">3D &amp; Rendering</button>
+				<button type="button" class="filter-btn" data-filter="inr">Neural Fields</button>
 			</div>
-		</article>
+		</div>
+
+		<div class="pub-list">
+			<!-- Home3D 1.0 (2026) -->
+			<article class="pub-item" data-category="3d inr">
+				<button type="button" class="pub-thumb-btn" data-lightbox-src="images/Home3D.svg" data-lightbox-alt="Home3D 1.0 pipeline architecture" aria-label="Zoom Home3D 1.0 pipeline figure">
+					<img src="images/Home3D.svg" alt="Home3D 1.0 paper thumbnail" class="pub-thumb">
+					<span class="pub-zoom-hint" aria-hidden="true">
+						<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+					</span>
+				</button>
+				<div class="pub-info">
+					<h3 class="pub-title">
+						<a href="https://homeai.taobao.com/" target="_blank" rel="noopener">
+							Home3D 1.0: A High-Fidelity Image-to-3D Asset Generation System for Interior Design
+						</a>
+						<span class="venue-badge venue-badge-featured">Tech Report 2026</span>
+					</h3>
+					<p class="pub-authors">
+						Yiyun Fei*, Guoqiu Li*, Jin Song*, Chuqiao Wu*,
+						<strong>Delong Wu*</strong>,
+						Hong Wu*, Ziru Zeng*, Haohui Chen, Yindong Kong, Jing Li, Qi Wu, Feng Zhang, Jianan Jiang, Ruigao Yang
+					</p>
+					<p class="pub-desc">
+						A modular production-ready image-to-3D generation pipeline coupling SDF Flow-Matching DiT geometry, 3D texture fields, MatWeaver PBR material retrieval, and semantic part decomposition (PartVAE &amp; PartDiT).
+					</p>
+					<div class="pub-links">
+						<a href="https://homeai.taobao.com/" target="_blank" rel="noopener" class="pub-action">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+							<span>Project Page</span>
+						</a>
+						<a href="https://arxiv.org/abs/2606.27923" target="_blank" rel="noopener" class="pub-action">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+							<span>arXiv</span>
+						</a>
+						<button type="button" class="pub-action pub-bibtex-btn" data-target="bib-home3d" aria-expanded="false">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+							<span>BibTeX</span>
+						</button>
+					</div>
+					<div class="bibtex-drawer" id="bib-home3d" hidden>
+						<div class="bibtex-header">
+							<span class="bibtex-label">BibTeX Citation</span>
+							<button type="button" class="bibtex-copy-btn" data-copy-target="code-home3d">Copy</button>
+						</div>
+						<pre class="bibtex-code"><code id="code-home3d">@article{fei2026home3d,
+  title   = {Home3D 1.0: A High-Fidelity Image-to-3D Asset Generation System for Interior Design},
+  author  = {Fei, Yiyun and Li, Guoqiu and Song, Jin and Wu, Chuqiao and Wu, Delong and Wu, Hong and Zeng, Ziru and Chen, Haohui and Kong, Yindong and Li, Jing and Wu, Qi and Zhang, Feng and Jiang, Jianan and Yang, Ruigao},
+  journal = {arXiv preprint arXiv:2606.27923},
+  year    = {2026},
+  url     = {https://homeai.taobao.com/}
+}</code></pre>
+					</div>
+				</div>
+			</article>
+
+			<!-- ICCV 2025 -->
+			<article class="pub-item" data-category="3d inr">
+				<button type="button" class="pub-thumb-btn" data-lightbox-src="images/ICCV2025.png" data-lightbox-alt="WIPES: Wavelet-based Visual Primitives pipeline" aria-label="Zoom WIPES pipeline figure">
+					<img src="images/ICCV2025.png" alt="ICCV 2025 paper thumbnail" class="pub-thumb">
+					<span class="pub-zoom-hint" aria-hidden="true">
+						<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+					</span>
+				</button>
+				<div class="pub-info">
+					<h3 class="pub-title">
+						<a href="https://mitnku.github.io/WIPES/" target="_blank" rel="noopener">
+							WIPES: Wavelet-based Visual Primitives
+						</a>
+						<span class="venue-badge">ICCV 2025</span>
+					</h3>
+					<p class="pub-authors">
+						Wenhao Zhang*,
+						<a href="https://pakfa.github.io/zhuhao_photo.github.io/" target="_blank" rel="noopener">Hao Zhu*</a>,
+						<strong>Delong Wu*</strong>,
+						Di Kang, Linchao Bao, Xun Cao, Zhan Ma
+					</p>
+					<p class="pub-desc">
+						Representing multi-dimensional visual signals with compact wavelet primitives and a wavelet-based rasterizer for high-frequency 2D image and 5D/6D novel view synthesis.
+					</p>
+					<div class="pub-links">
+						<a href="https://mitnku.github.io/WIPES/" target="_blank" rel="noopener" class="pub-action">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+							<span>Project Page</span>
+						</a>
+						<a href="https://arxiv.org/abs/2508.12615" target="_blank" rel="noopener" class="pub-action">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+							<span>arXiv</span>
+						</a>
+						<a href="https://mitnku.github.io/WIPES/" target="_blank" rel="noopener" class="pub-action">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+							<span>Code</span>
+						</a>
+						<button type="button" class="pub-action pub-bibtex-btn" data-target="bib-wipes" aria-expanded="false">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+							<span>BibTeX</span>
+						</button>
+					</div>
+					<div class="bibtex-drawer" id="bib-wipes" hidden>
+						<div class="bibtex-header">
+							<span class="bibtex-label">BibTeX Citation</span>
+							<button type="button" class="bibtex-copy-btn" data-copy-target="code-wipes">Copy</button>
+						</div>
+						<pre class="bibtex-code"><code id="code-wipes">@inproceedings{zhang2025wipes,
+  title     = {WIPES: Wavelet-based Visual Primitives},
+  author    = {Zhang, Wenhao and Zhu, Hao and Wu, Delong and Kang, Di and Bao, Linchao and Cao, Xun and Ma, Zhan},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025}
+}</code></pre>
+					</div>
+				</div>
+			</article>
+
+			<!-- ECCV 2024 -->
+			<article class="pub-item" data-category="inr">
+				<button type="button" class="pub-thumb-btn" data-lightbox-src="images/ECCV2024.png" data-lightbox-alt="Neural Poisson Solver pipeline" aria-label="Zoom Neural Poisson Solver pipeline figure">
+					<img src="images/ECCV2024.png" alt="ECCV 2024 paper thumbnail" class="pub-thumb">
+					<span class="pub-zoom-hint" aria-hidden="true">
+						<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+					</span>
+				</button>
+				<div class="pub-info">
+					<h3 class="pub-title">
+						<a href="https://github.com/ep1phany05/NeuralPoissonSolver" target="_blank" rel="noopener">
+							Neural Poisson Solver: A Universal and Continuous Framework for Natural Signal Blending
+						</a>
+						<span class="venue-badge">ECCV 2024</span>
+					</h3>
+					<p class="pub-authors">
+						<strong>Delong Wu*</strong>,
+						<a href="https://pakfa.github.io/zhuhao_photo.github.io/" target="_blank" rel="noopener">Hao Zhu*</a>,
+						Qi Zhang, You Li, Zhan Ma, Xun Cao
+					</p>
+					<p class="pub-desc">
+						Solving the Poisson equation directly in continuous implicit neural space for infinite-resolution, boundary-condition-free blending across 2D images and 5D radiance fields.
+					</p>
+					<div class="pub-links">
+						<a href="https://ep1phany05.github.io/NeuralPoissonSolver-website/" target="_blank" rel="noopener" class="pub-action">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+							<span>Project Page</span>
+						</a>
+						<a href="https://arxiv.org/abs/2407.08457" target="_blank" rel="noopener" class="pub-action">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+							<span>arXiv</span>
+						</a>
+						<a href="https://github.com/ep1phany05/NeuralPoissonSolver" target="_blank" rel="noopener" class="pub-action">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+							<span>Code</span>
+						</a>
+						<button type="button" class="pub-action pub-bibtex-btn" data-target="bib-nps" aria-expanded="false">
+							<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+							<span>BibTeX</span>
+						</button>
+					</div>
+					<div class="bibtex-drawer" id="bib-nps" hidden>
+						<div class="bibtex-header">
+							<span class="bibtex-label">BibTeX Citation</span>
+							<button type="button" class="bibtex-copy-btn" data-copy-target="code-nps">Copy</button>
+						</div>
+						<pre class="bibtex-code"><code id="code-nps">@inproceedings{wu2024neural,
+  title     = {Neural Poisson Solver: A Universal and Continuous Framework for Natural Signal Blending},
+  author    = {Wu, Delong and Zhu, Hao and Zhang, Qi and Li, You and Ma, Zhan and Cao, Xun},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2024}
+}</code></pre>
+					</div>
+				</div>
+			</article>
+		</div>
 
 	</section>
 
 </main>
 
+<!-- Figure Lightbox Modal -->
+<div class="lightbox" id="figureLightbox" role="dialog" aria-modal="true" aria-label="Publication figure preview" hidden>
+	<div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+	<div class="lightbox-content">
+		<button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+		<img src="" alt="" class="lightbox-img" id="lightboxImg">
+		<p class="lightbox-caption" id="lightboxCaption"></p>
+	</div>
+</div>
+
 <!-- Footer -->
 <footer class="footer">
-	<p>&copy; 2026 Delong Wu. All rights reserved.</p>
+	<div class="footer-inner">
+		<p>&copy; 2026 Delong Wu (武德龙). All rights reserved.</p>
+		<p class="footer-meta">Typeset in <code>Google Sans</code>, <code>Google Sans Text</code> &amp; <code>Source Code Pro</code></p>
+	</div>
 </footer>
+
+<script>
+(() => {
+	// 1. Theme Toggle with system preference fallback
+	const root = document.documentElement;
+	const themeBtn = document.getElementById('themeToggle');
+	const savedTheme = localStorage.getItem('theme');
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+		root.setAttribute('data-theme', 'dark');
+	}
+	themeBtn?.addEventListener('click', () => {
+		const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+		root.setAttribute('data-theme', next);
+		localStorage.setItem('theme', next);
+	});
+
+	// 2. Subtle Hero Spotlight tracking
+	const hero = document.getElementById('hero');
+	hero?.addEventListener('mousemove', (e) => {
+		const rect = hero.getBoundingClientRect();
+		hero.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+		hero.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+	});
+
+	// 3. Copy Email Button
+	const copyEmailBtn = document.getElementById('copyEmailBtn');
+	const copyEmailText = document.getElementById('copyEmailText');
+	copyEmailBtn?.addEventListener('click', async () => {
+		const email = copyEmailBtn.getAttribute('data-email');
+		if (!email) return;
+		try {
+			await navigator.clipboard.writeText(email);
+			copyEmailText.textContent = 'Copied!';
+			copyEmailBtn.classList.add('copied');
+			setTimeout(() => {
+				copyEmailText.textContent = 'Copy';
+				copyEmailBtn.classList.remove('copied');
+			}, 1800);
+		} catch (_) {}
+	});
+
+	// 4. BibTeX Drawers & One-Click Copy
+	document.querySelectorAll('.pub-bibtex-btn').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const targetId = btn.getAttribute('data-target');
+			const drawer = document.getElementById(targetId);
+			if (!drawer) return;
+			const isHidden = drawer.hasAttribute('hidden');
+			if (isHidden) {
+				drawer.removeAttribute('hidden');
+				btn.setAttribute('aria-expanded', 'true');
+				btn.classList.add('active');
+			} else {
+				drawer.setAttribute('hidden', '');
+				btn.setAttribute('aria-expanded', 'false');
+				btn.classList.remove('active');
+			}
+		});
+	});
+
+	document.querySelectorAll('.bibtex-copy-btn').forEach((btn) => {
+		btn.addEventListener('click', async () => {
+			const codeEl = document.getElementById(btn.getAttribute('data-copy-target'));
+			if (!codeEl) return;
+			try {
+				await navigator.clipboard.writeText(codeEl.textContent);
+				const prev = btn.textContent;
+				btn.textContent = 'Copied!';
+				setTimeout(() => { btn.textContent = prev; }, 1600);
+			} catch (_) {}
+		});
+	});
+
+	// 5. Publication Topic Filter
+	const filterBtns = document.querySelectorAll('.filter-btn');
+	const pubItems = document.querySelectorAll('.pub-item');
+	filterBtns.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const filter = btn.getAttribute('data-filter');
+			filterBtns.forEach((b) => b.classList.remove('active'));
+			btn.classList.add('active');
+			pubItems.forEach((item) => {
+				const cats = (item.getAttribute('data-category') || '').split(' ');
+				if (filter === 'all' || cats.includes(filter)) {
+					item.hidden = false;
+				} else {
+					item.hidden = true;
+				}
+			});
+		});
+	});
+
+	// 6. Figure Lightbox Modal
+	const lightbox = document.getElementById('figureLightbox');
+	const lightboxImg = document.getElementById('lightboxImg');
+	const lightboxCaption = document.getElementById('lightboxCaption');
+	const closeLightbox = () => {
+		if (!lightbox) return;
+		lightbox.setAttribute('hidden', '');
+		document.body.style.overflow = '';
+	};
+	document.querySelectorAll('.pub-thumb-btn').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const src = btn.getAttribute('data-lightbox-src');
+			const alt = btn.getAttribute('data-lightbox-alt');
+			if (!src || !lightbox || !lightboxImg) return;
+			lightboxImg.src = src;
+			lightboxImg.alt = alt || '';
+			if (lightboxCaption) lightboxCaption.textContent = alt || '';
+			lightbox.removeAttribute('hidden');
+			document.body.style.overflow = 'hidden';
+		});
+	});
+	document.getElementById('lightboxClose')?.addEventListener('click', closeLightbox);
+	document.getElementById('lightboxBackdrop')?.addEventListener('click', closeLightbox);
+	window.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && lightbox && !lightbox.hasAttribute('hidden')) {
+			closeLightbox();
+		}
+	});
+
+	// 7. Scroll Progress & Scroll-Spy Navigation
+	const progressBar = document.getElementById('scrollProgress');
+	const sections = ['about', 'research', 'publications'].map((id) => document.getElementById(id)).filter(Boolean);
+	const navLinks = document.querySelectorAll('.topnav-links a[data-nav]');
+	const onScroll = () => {
+		const scrollTop = window.scrollY;
+		const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+		if (progressBar && docHeight > 0) {
+			progressBar.style.transform = `scaleX(${Math.min(scrollTop / docHeight, 1)})`;
+		}
+		let current = '';
+		sections.forEach((sec) => {
+			if (scrollTop >= sec.offsetTop - 140) {
+				current = sec.id;
+			}
+		});
+		navLinks.forEach((link) => {
+			link.classList.toggle('active', link.getAttribute('data-nav') === current);
+		});
+	};
+	window.addEventListener('scroll', onScroll, { passive: true });
+	onScroll();
+})();
+</script>
 
 </body>
 </html>

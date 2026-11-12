@@ -635,4 +635,507 @@ html[data-theme="dark"] .icon-moon {
 	opacity: 1;
 }
 
-/* ==============================================
+/* ============================================================
+   Research Interests — 2x2 Bento Grid
+   ============================================================ */
+.interests-grid {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+}
+
+.interest-card {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.9rem;
+	padding: 1.15rem 1.2rem;
+	border-radius: 12px;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	box-shadow: var(--card-shadow);
+	transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+}
+
+.interest-card:hover {
+	transform: translateY(-2px);
+	border-color: var(--accent-border);
+	box-shadow: var(--card-shadow-lg);
+}
+
+.interest-icon {
+	flex-shrink: 0;
+	width: 38px;
+	height: 38px;
+	border-radius: 10px;
+	background: var(--accent-soft);
+	color: var(--accent);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.interest-content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.interest-term {
+	font-family: var(--font-display);
+	font-size: 0.9375rem;
+	font-weight: 600;
+	color: var(--text);
+	line-height: 1.35;
+}
+
+.interest-def {
+	font-size: 0.84rem;
+	color: var(--text-2);
+	line-height: 1.55;
+}
+
+/* ============================================================
+   Publications — Filter Bar, Cards & Interactive BibTeX Drawer
+   ============================================================ */
+.pub-filters {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	padding: 0.22rem;
+	border-radius: 980px;
+	background: var(--surface);
+	border: 1px solid var(--border);
+}
+
+.filter-btn {
+	font-family: var(--font-display);
+	font-size: 0.75rem;
+	font-weight: 500;
+	color: var(--text-2);
+	background: transparent;
+	border: none;
+	padding: 0.28rem 0.75rem;
+	border-radius: 980px;
+	cursor: pointer;
+	transition: background var(--ease), color var(--ease);
+}
+
+.filter-btn span {
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	opacity: 0.75;
+	margin-left: 0.15rem;
+}
+
+.filter-btn:hover {
+	color: var(--text);
+}
+
+.filter-btn.active {
+	background: var(--bg);
+	color: var(--accent);
+	font-weight: 600;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.pub-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.pub-item {
+	display: flex;
+	gap: 1.5rem;
+	align-items: flex-start;
+	padding: 1.35rem;
+	margin: 0 -1.35rem;
+	border-radius: 14px;
+	border: 1px solid transparent;
+	transition: background var(--ease), border-color var(--ease), box-shadow var(--ease);
+}
+
+.pub-item[hidden] {
+	display: none !important;
+}
+
+.pub-item:hover {
+	background: var(--surface);
+	border-color: var(--border);
+	box-shadow: var(--card-shadow);
+}
+
+.pub-thumb-btn {
+	position: relative;
+	padding: 0;
+	border: 1px solid var(--border);
+	background: #ffffff;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: zoom-in;
+	flex-shrink: 0;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+	transition: transform var(--ease), box-shadow var(--ease);
+}
+
+.pub-thumb-btn:hover {
+	transform: scale(1.015);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.pub-thumb {
+	width: 210px;
+	height: auto;
+	min-width: 210px;
+	display: block;
+}
+
+.pub-zoom-hint {
+	position: absolute;
+	right: 6px;
+	bottom: 6px;
+	width: 24px;
+	height: 24px;
+	border-radius: 6px;
+	background: rgba(15, 23, 42, 0.72);
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity var(--ease);
+}
+
+.pub-thumb-btn:hover .pub-zoom-hint {
+	opacity: 1;
+}
+
+.pub-info {
+	flex: 1;
+	min-width: 0;
+}
+
+.pub-title {
+	font-family: var(--font-display);
+	font-size: 0.98rem;
+	font-weight: 600;
+	line-height: 1.45;
+	margin-bottom: 0.4rem;
+}
+
+.pub-title a {
+	color: var(--text);
+	opacity: 1;
+}
+
+.pub-title a:hover {
+	color: var(--accent);
+	opacity: 1;
+}
+
+.venue-badge {
+	font-family: var(--font-mono);
+	display: inline-block;
+	padding: 0.12rem 0.55rem;
+	background: var(--accent-soft);
+	color: var(--accent);
+	border: 1px solid var(--accent-border);
+	border-radius: 980px;
+	font-size: 0.6875rem;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	vertical-align: middle;
+	margin-left: 0.35rem;
+}
+
+.venue-badge-featured {
+	background: linear-gradient(135deg, rgba(0, 102, 204, 0.12), rgba(99, 102, 241, 0.14));
+}
+
+.pub-authors {
+	font-size: 0.85rem;
+	color: var(--text-2);
+	line-height: 1.55;
+	margin-bottom: 0.4rem;
+}
+
+.pub-authors strong {
+	color: var(--text);
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-color: var(--accent-border);
+	text-underline-offset: 3px;
+}
+
+.pub-authors a {
+	color: var(--text-2);
+	opacity: 1;
+	border-bottom: 1px dotted var(--text-3);
+}
+
+.pub-authors a:hover {
+	color: var(--accent);
+	border-bottom-color: var(--accent);
+	opacity: 1;
+}
+
+.pub-desc {
+	font-size: 0.82rem;
+	color: var(--text-3);
+	line-height: 1.55;
+	margin-bottom: 0.65rem;
+}
+
+.pub-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.45rem;
+}
+
+.pub-action {
+	font-family: var(--font-display);
+	display: inline-flex;
+	align-items: center;
+	gap: 0.32rem;
+	padding: 0.22rem 0.65rem;
+	border-radius: 6px;
+	background: var(--surface-2);
+	border: 1px solid var(--border);
+	font-size: 0.76rem;
+	font-weight: 500;
+	color: var(--text-2);
+	cursor: pointer;
+	opacity: 1;
+	transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+
+.pub-action:hover,
+.pub-action.active {
+	background: var(--accent-soft);
+	border-color: var(--accent-border);
+	color: var(--accent);
+	opacity: 1;
+}
+
+/* BibTeX Code Drawer (Source Code Pro) */
+.bibtex-drawer {
+	margin-top: 0.75rem;
+	border-radius: 10px;
+	background: var(--surface-2);
+	border: 1px solid var(--border);
+	overflow: hidden;
+}
+
+.bibtex-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.4rem 0.85rem;
+	border-bottom: 1px solid var(--border);
+	background: var(--surface);
+}
+
+.bibtex-label {
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: var(--text-3);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+.bibtex-copy-btn {
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	font-weight: 600;
+	padding: 0.15rem 0.55rem;
+	border-radius: 5px;
+	border: 1px solid var(--border);
+	background: var(--bg);
+	color: var(--accent);
+	cursor: pointer;
+	transition: background var(--ease), border-color var(--ease);
+}
+
+.bibtex-copy-btn:hover {
+	background: var(--accent-soft);
+	border-color: var(--accent-border);
+}
+
+.bibtex-code {
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	line-height: 1.55;
+	color: var(--text);
+	padding: 0.75rem 0.9rem;
+	overflow-x: auto;
+	white-space: pre;
+}
+
+/* ============================================================
+   Figure Lightbox Modal
+   ============================================================ */
+.lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 300;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.lightbox[hidden] {
+	display: none !important;
+}
+
+.lightbox-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(10, 12, 18, 0.82);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+	position: relative;
+	z-index: 1;
+	max-width: min(960px, 92vw);
+	max-height: 88vh;
+	background: #ffffff;
+	padding: 1.25rem;
+	border-radius: 16px;
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.lightbox-close {
+	position: absolute;
+	top: 0.6rem;
+	right: 0.75rem;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: none;
+	background: rgba(15, 23, 42, 0.08);
+	color: #0f172a;
+	font-size: 1.3rem;
+	line-height: 1;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lightbox-close:hover {
+	background: rgba(15, 23, 42, 0.16);
+}
+
+.lightbox-img {
+	max-width: 100%;
+	max-height: 74vh;
+	width: auto;
+	height: auto;
+	border-radius: 8px;
+}
+
+.lightbox-caption {
+	font-family: var(--font-display);
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: #334155;
+	text-align: center;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer {
+	max-width: var(--max-w);
+	margin: 0 auto;
+	padding: 2rem 2rem 2.75rem;
+	border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	font-size: 0.75rem;
+	color: var(--text-3);
+}
+
+.footer-meta code {
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	color: var(--text-2);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 680px) {
+	.hero {
+		padding: 3.75rem 0 3.25rem;
+	}
+
+	.hero-inner {
+		flex-direction: column-reverse;
+		align-items: center;
+		text-align: center;
+	}
+
+	.hero-links {
+		justify-content: center;
+	}
+
+	.hero-name-zh {
+		display: block;
+		margin: 0.25rem 0 0;
+	}
+
+	.profile-img {
+		width: 124px;
+	}
+
+	.interests-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.section-header-row {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.pub-item {
+		flex-direction: column;
+		margin: 0;
+		padding: 1.15rem;
+		border: 1px solid var(--border);
+	}
+
+	.pub-thumb-btn {
+		width: 100%;
+	}
+
+	.pub-thumb {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.section {
+		padding: 2.25rem 0;
+	}
+
+	.footer-inner {
+		flex-direction: column;
+		text-align: center;
+	}
+}
